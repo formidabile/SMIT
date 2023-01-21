@@ -1,0 +1,45 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(b16ce885-28a1-45f9-a01c-10dcd084c737),
+	version(1.0),
+	implicit_handle(handle_t hExample1Binding)
+]
+
+interface Example1
+{
+	const unsigned int cMaxBuf = 65534;
+
+	void Output(
+		[in, string] const char* szOutput);
+	int CopyOnClient(
+		[string][in] const  char* path,
+		[out] int buf[cMaxBuf],
+		[out] unsigned int* length_buf,
+		[in] int index,
+		[out] int* check_eof
+	);
+	int MakeFileOnServer(
+		[string][in] const char* FileName,
+		[in] int buf[cMaxBuf],
+		[in] int length_buf,
+		[in] int index,
+		[in] int check_eof
+	);
+
+	int DeleteFileOnServer(
+		[string][in] const char* path,
+		[in] int index
+	);
+
+	int MakeClientOnServer(
+		[string][in]  const char* login,
+		[string][in]  const char* password,
+		[out] int* index
+	);
+
+	int ClientOut(
+		[in] int index
+	);
+}
