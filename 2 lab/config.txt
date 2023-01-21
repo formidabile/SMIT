@@ -1,0 +1,3 @@
+D:\programming\bsit_service\bsit_service\files
+D:\programming\bsit_service\bsit_service\bsit.zip
+*.*

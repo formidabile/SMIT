@@ -1,0 +1,4 @@
+Success install service!
+Stopped.
+Stopped.
+Success remove service!
